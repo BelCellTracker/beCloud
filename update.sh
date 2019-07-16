@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
+cd "$(dirname "$0")"
+
 if [ -f .env ]; then
 	export $(cat .env | sed 's/#.*//g' | xargs)
 fi
 
-cd "$(dirname "$0")"
 LOCKFILE=".lock"
 
 if [ -f "$LOCKFILE" ] && kill -0 "$(cat $LOCKFILE)" 2>/dev/null; then
