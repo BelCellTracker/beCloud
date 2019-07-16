@@ -16,7 +16,7 @@ echo $$ > $LOCKFILE
 
 git pull
 
-./$UPDATER
+$UPDATER
 
 git add -A
 git commit --no-gpg-sign -a -m "Updated: $(date +"%Y-%m-%d %T %:z")"
